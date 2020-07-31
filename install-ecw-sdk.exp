@@ -1,0 +1,17 @@
+set timeout -1
+spawn ./ERDAS_ECWJP2_SDK-5.4.0.bin
+
+expect "*"
+send -- "1\r"
+
+while 1  {
+
+    expect {
+
+        -re ".*Do you accept this License Agreement.*" { send -- "yes\r"; break }
+
+        -re ".*More.*" { send -- "s"}
+
+    }
+}
+expect eof
