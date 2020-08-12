@@ -63,8 +63,10 @@ RUN pip install GDAL==$(gdal-config --version) --global-option=build_ext --globa
 RUN pip install fire==0.3.1
 RUN pip install tqdm==4.46.0
 RUN pip install Pillow==7.2.0
+RUN pip install opencv-python-headless==4.4.0.40
 
 # Copy scripts
 WORKDIR /home
 COPY ./npy_to_img.py ./scripts/npy_to_img.py
 COPY ./ecw_to_npy.py ./scripts/ecw_to_npy.py
+COPY ./converter.py ./scripts/converter.py
