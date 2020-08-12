@@ -75,8 +75,7 @@ def main(input_folder="data", output_folder="data", out_format="tif", create_bin
         if create_binding:
             create_binding_file(out_img_filename, geotransform)
 
-        print(out_img_filename)
-
+        print(out_img_filename, flush=True)
 
 if __name__ == '__main__':
     Fire(main)
